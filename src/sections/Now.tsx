@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, BookOpen, Rocket } from "lucide-react";
-
-const nowData = {
-  currentWork: "Building production apps at CNB Code - payment systems, parental controls & enterprise solutions",
-  learning: "ALX Backend Program - Advanced API design, database optimization & cloud infrastructure",
-  building: "Aegis DNS platform, M-Pesa payment wrapper & fullstack client applications"
-};
+import { Rocket, ExternalLink } from "lucide-react";
 
 const Now = () => {
   return (
@@ -26,9 +20,9 @@ const Now = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="max-w-2xl mx-auto">
           <motion.div
-            className="glass p-6 rounded-xl border border-border/50 hover:border-secondary/40 transition-all duration-500 group"
+            className="glass p-8 rounded-xl border border-border/50 hover:border-secondary/40 transition-all duration-500 group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -36,67 +30,33 @@ const Now = () => {
             whileHover={{ y: -4 }}
             style={{ boxShadow: 'var(--shadow-md)' }}
           >
-            <Rocket className="w-8 h-8 text-secondary mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Working On</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {nowData.currentWork}
+            <Rocket className="w-10 h-10 text-secondary mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <h3 className="text-xl font-semibold text-foreground mb-3">CNB Code</h3>
+            <p className="text-muted-foreground text-base leading-relaxed mb-4">
+              Building client projects - fullstack applications, payment integrations, and web solutions for businesses.
             </p>
-          </motion.div>
-
-          <motion.div
-            className="glass p-6 rounded-xl border border-border/50 hover:border-primary/40 transition-all duration-500 group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            whileHover={{ y: -4 }}
-            style={{ boxShadow: 'var(--shadow-md)' }}
-          >
-            <BookOpen className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Learning</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {nowData.learning}
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="glass p-6 rounded-xl border border-border/50 hover:border-secondary/40 transition-all duration-500 group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            whileHover={{ y: -4 }}
-            style={{ boxShadow: 'var(--shadow-md)' }}
-          >
-            <Sparkles className="w-8 h-8 text-secondary mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Building</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {nowData.building}
-            </p>
+            <a
+              href="https://cnbcode.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors duration-300 font-medium group"
+            >
+              Visit CNB Code
+              <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
           </motion.div>
         </div>
 
         <motion.div
-          className="text-center mt-8"
+          className="text-center mt-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <p className="text-muted-foreground text-sm mb-2">
+          <p className="text-muted-foreground text-sm">
             Last updated: October 2025
           </p>
-          <a
-            href="https://cnbcode.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors duration-300 text-sm font-medium group"
-          >
-            Visit CNB Code
-            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
         </motion.div>
       </div>
     </section>

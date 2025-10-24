@@ -14,22 +14,11 @@ const Hero = () => (
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gradient-glow opacity-20 blur-3xl" />
     </div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="mb-4"
-    >
-      <span className="inline-block px-4 py-1.5 rounded-full text-sm font-mono bg-primary/10 text-primary border border-primary/30 glow-border">
-        &lt;developer /&gt;
-      </span>
-    </motion.div>
-
     <motion.h2
       className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 max-w-4xl"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
     >
       Hello, I'm{" "}
       <span className="gradient-text glow-text">Brian Njuguna</span>
@@ -39,7 +28,7 @@ const Hero = () => (
       className="text-lg sm:text-xl lg:text-2xl max-w-3xl mb-10 leading-relaxed text-muted-foreground"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
     >
       Fullstack developer specializing in{" "}
       <span className="text-primary font-semibold">backend systems</span> and{" "}
@@ -49,7 +38,7 @@ const Hero = () => (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.5 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
       className="flex flex-col sm:flex-row gap-4 mb-12"
     >
       <a
@@ -74,7 +63,7 @@ const Hero = () => (
       className="max-w-3xl text-base sm:text-lg leading-relaxed text-muted-foreground"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.6 }}
+      transition={{ duration: 0.6, delay: 0.5 }}
     >
       Currently enrolled in the{" "}
       <span className="text-foreground font-medium">ALX Backend Software Engineering Program</span>, building fullstack applications with payment integrations, parental control platforms, and enterprise solutions.

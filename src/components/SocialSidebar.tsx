@@ -18,13 +18,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const SocialSidebar = () => (
   <nav
     aria-label="Social media links"
-    className="fixed bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 py-3 px-6 rounded-full z-50 transition-all duration-300 hover:scale-105 md:left-0 md:top-1/3 md:translate-x-0 md:translate-y-0 md:flex-col md:space-x-0 md:space-y-4 md:py-4 md:px-2 md:rounded-r-xl md:rounded-l-none"
-    style={{ 
-      background: 'hsl(var(--card) / 0.4)',
-      backdropFilter: 'blur(12px)',
-      border: '1px solid hsl(var(--border) / 0.2)',
-      boxShadow: 'var(--shadow-sm)'
-    }}
+    className="fixed bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-50 md:left-0 md:top-1/3 md:translate-x-0 md:translate-y-0 md:flex-col md:space-x-0 md:space-y-4"
   >
     {socialLinks.map(({ platform, url, Icon }, idx) => {
       const IconComponent = platform === "WhatsApp" ? WhatsAppIcon : Icon;
@@ -36,7 +30,7 @@ const SocialSidebar = () => (
           target="_blank"
           rel="noopener noreferrer"
           aria-label={platform}
-          className="group relative text-primary hover:text-foreground transition-all duration-300 p-2 rounded-lg hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 active:scale-95"
+          className="group relative text-muted-foreground hover:text-primary transition-all duration-300 p-2 rounded-lg hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 active:scale-95"
           style={{ animationDelay: `${idx * 0.1}s` }}
         >
           {IconComponent && (
