@@ -66,23 +66,28 @@ const Skills = () => (
       {skills.map(({ category, icon: Icon, items }, idx) => (
         <motion.div
           key={category}
-          className="p-6 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors duration-300"
+          className="p-6 rounded-lg bg-card border border-border hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 * idx, duration: 0.5 }}
+          whileHover={{ scale: 1.02 }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 rounded-lg bg-primary/10">
+            <div className="p-2 rounded-lg bg-primary/10 transition-all duration-300 hover:bg-primary/20 hover:rotate-6">
               <Icon className="w-5 h-5 text-primary" />
             </div>
             <h3 className="text-lg font-semibold text-foreground">{category}</h3>
           </div>
           <ul className="space-y-2">
             {items.map((item) => (
-              <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-primary/50" />
+              <motion.li
+                key={item}
+                className="text-sm text-muted-foreground flex items-center gap-2 transition-all duration-300 hover:text-foreground hover:translate-x-1 cursor-default"
+                whileHover={{ x: 4 }}
+              >
+                <span className="w-1 h-1 rounded-full bg-primary/50 transition-all duration-300 hover:w-1.5 hover:h-1.5" />
                 {item}
-              </li>
+              </motion.li>
             ))}
           </ul>
         </motion.div>

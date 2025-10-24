@@ -44,10 +44,11 @@ const Projects = () => (
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative block rounded-xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="group relative block rounded-xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-primary hover:-translate-y-2 hover:shadow-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 * idx, duration: 0.5 }}
+          whileHover={{ scale: 1.02 }}
           aria-label={`Project: ${name}`}
         >
           {/* Image */}
@@ -55,9 +56,9 @@ const Projects = () => (
             <img 
               src={image} 
               alt={`${name} preview`}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
           </div>
           
           {/* Content */}
@@ -85,7 +86,7 @@ const Projects = () => (
             
             {/* Tech badge */}
             <div className="flex items-center gap-2">
-              <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+              <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-105">
                 <span className="text-xs font-mono text-primary">View Project</span>
               </div>
             </div>

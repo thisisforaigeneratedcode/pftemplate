@@ -67,7 +67,7 @@ const Contact = () => {
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full p-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground transition-all duration-300"
+              className="w-full p-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground transition-all duration-300 hover:border-primary/30"
               aria-label="Your Name"
             />
           </div>
@@ -83,7 +83,7 @@ const Contact = () => {
               required
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full p-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground transition-all duration-300"
+              className="w-full p-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground transition-all duration-300 hover:border-primary/30"
               aria-label="Your Email"
             />
           </div>
@@ -99,16 +99,16 @@ const Contact = () => {
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full p-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground resize-none transition-all duration-300"
+              className="w-full p-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground resize-none transition-all duration-300 hover:border-primary/30"
               aria-label="Your Message"
             />
           </div>
 
           <button
             type="submit"
-            className="group relative w-full py-3 rounded-lg font-semibold text-base bg-primary text-primary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary overflow-hidden flex items-center justify-center gap-2"
+            className="group relative w-full py-3 rounded-lg font-semibold text-base bg-primary text-primary-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-primary overflow-hidden flex items-center justify-center gap-2 active:scale-95"
           >
-            <Send className="w-5 h-5" />
+            <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             <span className="relative z-10">Send Message</span>
           </button>
 

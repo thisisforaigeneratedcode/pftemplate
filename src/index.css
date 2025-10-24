@@ -135,11 +135,16 @@
   
   /* Card hover effect */
   .card-hover {
-    @apply transition-all duration-200 hover:scale-[1.01];
+    @apply transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1;
     box-shadow: var(--shadow-sm);
   }
   
   .card-hover:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  button, a, input, textarea {
+    @apply transition-all duration-300;
   }
 }
