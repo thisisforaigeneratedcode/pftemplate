@@ -171,7 +171,7 @@ const About = () => {
             If you're building for scale, for trust, or for something bigger than yourself...
           </p>
           <a
-            href="https://docs.google.com/document/d/1AzpAenefivF0MeBmlpGmeKgM94KQJhirmFFajVDQzu8/edit?usp=sharing"
+            href="https://docs.google.com/document/d/1-1jIoEnlpKtVKYeTUVroFWU73UuxzDIMiagngYvkHNY/edit?usp=sharing"
             className="inline-block px-8 py-4 rounded-xl font-semibold transition-all duration-300 bg-primary text-primary-foreground hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary"
             target="_blank"
             rel="noopener noreferrer"

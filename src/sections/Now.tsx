@@ -33,7 +33,7 @@ const Now = () => {
             <Rocket className="w-10 h-10 text-secondary mb-4 group-hover:scale-110 transition-transform duration-300" />
             <h3 className="text-xl font-semibold text-foreground mb-3">CNB Code</h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-4">
-              Building client projects - fullstack applications, payment integrations, and web solutions for businesses.
+              Leading the team in solving problems for local businesses and the underlooked citizen because technology is for all.
             </p>
             <a
               href="https://cnbcode.com"
