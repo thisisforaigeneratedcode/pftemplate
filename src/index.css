@@ -4,63 +4,60 @@
 
 @layer base {
   :root {
-    /* Ambient Professional Theme - Muted & Comfy */
-    --background: 222 47% 11%;          /* #0F172A - Deep slate */
-    --foreground: 210 15% 75%;          /* Muted softer white */
+    /* Warm Ambient Professional Theme - Harmonious Blend */
+    --background: 220 18% 12%;           /* Deep charcoal with warm undertone */
+    --foreground: 30 8% 88%;             /* Warm off-white */
     
-    --card: 217 33% 17%;                /* #1E293B - Elevated slate */
-    --card-foreground: 210 15% 75%;
+    --card: 218 20% 16%;                 /* Elevated charcoal */
+    --card-foreground: 30 8% 88%;
     
-    --popover: 217 33% 17%;
-    --popover-foreground: 210 15% 75%;
+    --popover: 218 20% 16%;
+    --popover-foreground: 30 8% 88%;
     
-    --primary: 263 35% 48%;             /* Much more muted violet - ambient */
-    --primary-foreground: 210 15% 85%;
+    --primary: 195 65% 55%;              /* Calm teal - professional & modern */
+    --primary-foreground: 220 18% 12%;   /* Dark text on teal */
     
-    --secondary: 215 20% 25%;           /* Muted slate */
-    --secondary-foreground: 210 15% 75%;
+    --secondary: 38 45% 58%;             /* Warm amber - complementary */
+    --secondary-foreground: 220 18% 12%;
     
-    --muted: 215 20% 25%;
-    --muted-foreground: 215 12% 48%;    /* More subtle gray */
+    --muted: 217 18% 22%;                /* Subtle gray-blue */
+    --muted-foreground: 30 6% 62%;       /* Warm muted text */
     
-    --accent: 263 35% 48%;              /* Muted violet accent */
-    --accent-foreground: 210 15% 75%;
+    --accent: 195 65% 55%;               /* Teal accent */
+    --accent-foreground: 220 18% 12%;
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 30 8% 98%;
     
-    --border: 217 33% 22%;              /* Softer borders */
-    --input: 217 33% 20%;
-    --ring: 263 35% 48%;
+    --border: 217 18% 24%;               /* Subtle borders */
+    --input: 218 20% 18%;
+    --ring: 195 65% 55%;
     
-    --sidebar-background: 217 33% 17%;
-    --sidebar-foreground: 210 15% 75%;
-    --sidebar-primary: 263 35% 48%;
-    --sidebar-primary-foreground: 210 15% 75%;
-    --sidebar-accent: 215 20% 25%;
-    --sidebar-accent-foreground: 210 15% 75%;
-    --sidebar-border: 217 33% 22%;
-    --sidebar-ring: 263 35% 48%;
+    --sidebar-background: 218 20% 16%;
+    --sidebar-foreground: 30 8% 88%;
+    --sidebar-primary: 195 65% 55%;
+    --sidebar-primary-foreground: 220 18% 12%;
+    --sidebar-accent: 217 18% 22%;
+    --sidebar-accent-foreground: 30 8% 88%;
+    --sidebar-border: 217 18% 24%;
+    --sidebar-ring: 195 65% 55%;
     
     --radius: 0.75rem;
     
-    /* Gradient Tokens - Very subtle and ambient */
-    --gradient-primary: linear-gradient(135deg, hsl(263 35% 48% / 0.03), hsl(263 35% 48% / 0.01));
-    --gradient-subtle: linear-gradient(180deg, hsl(222 47% 11%), hsl(217 33% 17%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(263 35% 48% / 0.02), transparent 70%);
-    --gradient-card: linear-gradient(135deg, hsl(217 33% 17%), hsl(215 30% 20%));
+    /* Gradient Tokens - Harmonious blend of teal & amber */
+    --gradient-primary: linear-gradient(135deg, hsl(195 65% 55% / 0.08), hsl(195 65% 55% / 0.02));
+    --gradient-secondary: linear-gradient(135deg, hsl(38 45% 58% / 0.08), hsl(38 45% 58% / 0.02));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 18% 12%), hsl(218 20% 16%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(195 65% 55% / 0.06), transparent 70%);
+    --gradient-card: linear-gradient(135deg, hsl(218 20% 16%), hsl(217 18% 18%));
+    --gradient-warm: linear-gradient(135deg, hsl(195 65% 55% / 0.1), hsl(38 45% 58% / 0.1));
     
-    /* Shadow Tokens - Very subtle */
-    --shadow-sm: 0 1px 2px 0 hsl(263 35% 48% / 0.01);
-    --shadow-md: 0 4px 6px -1px hsl(263 35% 48% / 0.02), 0 2px 4px -1px hsl(263 35% 48% / 0.01);
-    --shadow-lg: 0 10px 15px -3px hsl(263 35% 48% / 0.03), 0 4px 6px -2px hsl(263 35% 48% / 0.01);
-    --shadow-glow: 0 0 20px hsl(263 35% 48% / 0.02), 0 0 30px hsl(263 35% 48% / 0.01);
-    
-    /* Terminal Theme */
-    --terminal-bg: 222 50% 8%;
-    --terminal-header: 222 55% 6%;
-    --terminal-text: 142 35% 45%;
-    --terminal-prompt: 263 35% 48%;
+    /* Shadow Tokens - Harmonious depth */
+    --shadow-sm: 0 1px 3px 0 hsl(220 18% 8% / 0.3);
+    --shadow-md: 0 4px 8px -2px hsl(220 18% 8% / 0.4), 0 2px 4px -2px hsl(220 18% 8% / 0.3);
+    --shadow-lg: 0 10px 20px -5px hsl(220 18% 8% / 0.5), 0 4px 8px -4px hsl(220 18% 8% / 0.4);
+    --shadow-glow: 0 0 24px hsl(195 65% 55% / 0.15), 0 0 36px hsl(195 65% 55% / 0.08);
+    --shadow-warm: 0 0 24px hsl(38 45% 58% / 0.12), 0 0 36px hsl(38 45% 58% / 0.06);
   }
 }
 
