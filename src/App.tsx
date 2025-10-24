@@ -6,6 +6,7 @@ import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import About from "./sections/About";
+import Now from "./sections/Now";
 import Contact from "./sections/Contact";
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
       <Projects />
       <Skills />
       <About />
+      <Now />
       <Contact />
     </main>
     <Footer />

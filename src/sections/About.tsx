@@ -77,8 +77,8 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             style={{ boxShadow: 'var(--shadow-md)' }}
           >
-            <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
-              <span className="text-2xl">💭</span> Philosophy
+            <h3 className="text-xl font-semibold text-primary mb-4">
+              Philosophy
             </h3>
             <ul className="space-y-3">
               {aboutData.philosophy.map((item, idx) => (
@@ -99,8 +99,8 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             style={{ boxShadow: 'var(--shadow-md)' }}
           >
-            <h3 className="text-xl font-semibold text-secondary mb-4 flex items-center gap-2">
-              <span className="text-2xl">🎯</span> Mission
+            <h3 className="text-xl font-semibold text-secondary mb-4">
+              Mission
             </h3>
             <ul className="space-y-3">
               {aboutData.mission.map((item, idx) => (

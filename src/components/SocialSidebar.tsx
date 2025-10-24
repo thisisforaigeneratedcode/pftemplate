@@ -18,7 +18,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const SocialSidebar = () => (
   <nav
     aria-label="Social media links"
-    className="fixed top-1/3 left-0 flex flex-col space-y-4 glass py-4 px-2 rounded-r-xl shadow-lg z-50 border-l-0 transition-all duration-300 hover:px-3"
+    className="fixed bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 glass py-3 px-6 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-105 md:left-0 md:top-1/3 md:translate-x-0 md:translate-y-0 md:flex-col md:space-x-0 md:space-y-4 md:py-4 md:px-2 md:rounded-r-xl md:rounded-l-none md:border-l-0"
   >
     {socialLinks.map(({ platform, url, Icon }, idx) => {
       const IconComponent = platform === "WhatsApp" ? WhatsAppIcon : Icon;
@@ -36,7 +36,7 @@ const SocialSidebar = () => (
           {IconComponent && (
             <IconComponent className="w-6 h-6 transform group-hover:rotate-12 transition-all duration-300" />
           )}
-          <span className="absolute left-full ml-2 px-3 py-1 bg-card border border-border rounded-lg text-sm font-medium whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 shadow-lg">
+          <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-card border border-border rounded-lg text-sm font-medium whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 shadow-lg md:bottom-auto md:left-full md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:ml-2 md:mb-0 md:group-hover:translate-x-1 md:group-hover:translate-y-0">
             {platform}
           </span>
         </a>
