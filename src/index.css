@@ -4,63 +4,63 @@
 
 @layer base {
   :root {
-    /* Professional Slate Theme with Muted Violet Accents */
+    /* Ambient Professional Theme - Muted & Comfy */
     --background: 222 47% 11%;          /* #0F172A - Deep slate */
-    --foreground: 210 20% 88%;          /* Softer white */
+    --foreground: 210 15% 75%;          /* Muted softer white */
     
     --card: 217 33% 17%;                /* #1E293B - Elevated slate */
-    --card-foreground: 210 20% 88%;
+    --card-foreground: 210 15% 75%;
     
     --popover: 217 33% 17%;
-    --popover-foreground: 210 20% 88%;
+    --popover-foreground: 210 15% 75%;
     
-    --primary: 263 50% 55%;             /* Muted violet - less bright */
-    --primary-foreground: 210 20% 88%;
+    --primary: 263 35% 48%;             /* Much more muted violet - ambient */
+    --primary-foreground: 210 15% 85%;
     
     --secondary: 215 20% 25%;           /* Muted slate */
-    --secondary-foreground: 210 20% 88%;
+    --secondary-foreground: 210 15% 75%;
     
     --muted: 215 20% 25%;
-    --muted-foreground: 215 16% 55%;    /* Less bright gray */
+    --muted-foreground: 215 12% 48%;    /* More subtle gray */
     
-    --accent: 263 50% 55%;              /* Muted violet accent */
-    --accent-foreground: 210 20% 88%;
+    --accent: 263 35% 48%;              /* Muted violet accent */
+    --accent-foreground: 210 15% 75%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 217 33% 25%;              /* Subtle borders */
+    --border: 217 33% 22%;              /* Softer borders */
     --input: 217 33% 20%;
-    --ring: 263 50% 55%;
+    --ring: 263 35% 48%;
     
     --sidebar-background: 217 33% 17%;
-    --sidebar-foreground: 210 20% 88%;
-    --sidebar-primary: 263 50% 55%;
-    --sidebar-primary-foreground: 210 20% 88%;
+    --sidebar-foreground: 210 15% 75%;
+    --sidebar-primary: 263 35% 48%;
+    --sidebar-primary-foreground: 210 15% 75%;
     --sidebar-accent: 215 20% 25%;
-    --sidebar-accent-foreground: 210 20% 88%;
-    --sidebar-border: 217 33% 25%;
-    --sidebar-ring: 263 50% 55%;
+    --sidebar-accent-foreground: 210 15% 75%;
+    --sidebar-border: 217 33% 22%;
+    --sidebar-ring: 263 35% 48%;
     
     --radius: 0.75rem;
     
-    /* Gradient Tokens - More subtle */
-    --gradient-primary: linear-gradient(135deg, hsl(263 50% 55% / 0.05), hsl(263 50% 55% / 0.01));
+    /* Gradient Tokens - Very subtle and ambient */
+    --gradient-primary: linear-gradient(135deg, hsl(263 35% 48% / 0.03), hsl(263 35% 48% / 0.01));
     --gradient-subtle: linear-gradient(180deg, hsl(222 47% 11%), hsl(217 33% 17%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(263 50% 55% / 0.03), transparent 70%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(263 35% 48% / 0.02), transparent 70%);
     --gradient-card: linear-gradient(135deg, hsl(217 33% 17%), hsl(215 30% 20%));
     
-    /* Shadow Tokens - More subtle */
-    --shadow-sm: 0 1px 2px 0 hsl(263 50% 55% / 0.02);
-    --shadow-md: 0 4px 6px -1px hsl(263 50% 55% / 0.03), 0 2px 4px -1px hsl(263 50% 55% / 0.01);
-    --shadow-lg: 0 10px 15px -3px hsl(263 50% 55% / 0.04), 0 4px 6px -2px hsl(263 50% 55% / 0.02);
-    --shadow-glow: 0 0 20px hsl(263 50% 55% / 0.04), 0 0 30px hsl(263 50% 55% / 0.02);
+    /* Shadow Tokens - Very subtle */
+    --shadow-sm: 0 1px 2px 0 hsl(263 35% 48% / 0.01);
+    --shadow-md: 0 4px 6px -1px hsl(263 35% 48% / 0.02), 0 2px 4px -1px hsl(263 35% 48% / 0.01);
+    --shadow-lg: 0 10px 15px -3px hsl(263 35% 48% / 0.03), 0 4px 6px -2px hsl(263 35% 48% / 0.01);
+    --shadow-glow: 0 0 20px hsl(263 35% 48% / 0.02), 0 0 30px hsl(263 35% 48% / 0.01);
     
     /* Terminal Theme */
     --terminal-bg: 222 50% 8%;
     --terminal-header: 222 55% 6%;
-    --terminal-text: 142 50% 50%;
-    --terminal-prompt: 263 50% 55%;
+    --terminal-text: 142 35% 45%;
+    --terminal-prompt: 263 35% 48%;
   }
 }
 
@@ -116,18 +116,18 @@
     border: 1px solid hsl(var(--border) / 0.5);
   }
   
-  /* Glow effects - More subtle */
+  /* Glow effects - Very subtle */
   .glow-text {
-    text-shadow: 0 0 8px hsl(var(--primary) / 0.1);
+    text-shadow: 0 0 6px hsl(var(--primary) / 0.06);
   }
   
   .glow-border {
-    box-shadow: 0 0 8px hsl(var(--primary) / 0.06);
+    box-shadow: 0 0 6px hsl(var(--primary) / 0.04);
   }
   
-  /* Gradient text - Less bright */
+  /* Gradient text - Ambient */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(263 50% 65%));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(263 35% 58%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
