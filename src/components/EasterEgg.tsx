@@ -4,25 +4,50 @@ import { Terminal } from "lucide-react";
 
 const EasterEgg = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [sequence, setSequence] = useState<string[]>([]);
+  const [scrollPattern, setScrollPattern] = useState<string[]>([]);
+  const [lastScrollY, setLastScrollY] = useState(0);
   
-  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  const targetPattern = ['down', 'up', 'down', 'up', 'down'];
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const newSequence = [...sequence, e.key].slice(-10);
-      setSequence(newSequence);
+    let scrollTimeout: NodeJS.Timeout;
 
-      if (JSON.stringify(newSequence) === JSON.stringify(konamiCode)) {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      clearTimeout(scrollTimeout);
+      
+      scrollTimeout = setTimeout(() => {
+        if (currentScrollY > lastScrollY + 50) {
+          // Scrolled down
+          const newPattern = [...scrollPattern, 'down'].slice(-5);
+          setScrollPattern(newPattern);
+          checkPattern(newPattern);
+        } else if (currentScrollY < lastScrollY - 50) {
+          // Scrolled up
+          const newPattern = [...scrollPattern, 'up'].slice(-5);
+          setScrollPattern(newPattern);
+          checkPattern(newPattern);
+        }
+        
+        setLastScrollY(currentScrollY);
+      }, 150);
+    };
+
+    const checkPattern = (pattern: string[]) => {
+      if (JSON.stringify(pattern) === JSON.stringify(targetPattern)) {
         setIsVisible(true);
-        setSequence([]);
+        setScrollPattern([]);
         setTimeout(() => setIsVisible(false), 8000);
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [sequence]);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [scrollPattern, lastScrollY]);
 
   return (
     <AnimatePresence>
@@ -44,7 +69,7 @@ const EasterEgg = () => {
               <Terminal className="w-12 h-12 text-primary" />
               <div>
                 <h2 className="text-2xl font-bold text-primary">You found the secret!</h2>
-                <p className="text-sm text-muted-foreground">Konami Code Master Detected</p>
+                <p className="text-sm text-muted-foreground">Scroll Master Detected</p>
               </div>
             </div>
 
@@ -54,9 +79,9 @@ const EasterEgg = () => {
               
               <div className="text-primary mb-2">$ cat secret_message.txt</div>
               <div className="text-foreground/80 leading-relaxed">
-                <p className="mb-3">Hey there, fellow developer!</p>
+                <p className="mb-3">Hey there, curious visitor!</p>
                 <p className="mb-3">
-                  If you're seeing this, you either know the Konami Code or you're really curious about my work. Either way, I like your style.
+                  If you're seeing this, you discovered my little scroll secret. I like people who explore and pay attention to details.
                 </p>
                 <p className="mb-3">
                   I believe the best solutions come from curiosity, experimentation, and a bit of fun. That's how I approach every project — whether it's building security tools, automation scripts, or just exploring what's possible.
