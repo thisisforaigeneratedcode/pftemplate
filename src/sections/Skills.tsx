@@ -1,27 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, Database, Shield, Server } from "lucide-react";
+import { Code2, Database, Shield, Wrench, Cloud, Layout } from "lucide-react";
 
 const skills = [
   {
-    category: "Backend",
-    icon: Server,
-    items: ["Python", "Node.js", "REST APIs", "PostgreSQL"],
-  },
-  {
-    category: "Security",
-    icon: Shield,
-    items: ["Encryption", "Penetration Testing", "Secure Coding", "Threat Analysis"],
-  },
-  {
-    category: "Development",
+    category: "Programming",
     icon: Code2,
-    items: ["Git", "Docker", "CI/CD", "Linux"],
+    items: ["Python", "JavaScript/TypeScript", "Django", "Node.js", "React"],
+  },
+  {
+    category: "Backend & APIs",
+    icon: Database,
+    items: ["Django REST Framework", "Express.js", "REST APIs", "Celery", "Redis"],
   },
   {
     category: "Database",
     icon: Database,
-    items: ["SQL", "Database Design", "Optimization", "Data Modeling"],
+    items: ["PostgreSQL", "Supabase", "Django ORM", "Query Optimization"],
+  },
+  {
+    category: "DevOps & Cloud",
+    icon: Cloud,
+    items: ["Docker", "Kubernetes", "Jenkins", "AWS", "DigitalOcean", "CI/CD"],
+  },
+  {
+    category: "Tools",
+    icon: Wrench,
+    items: ["Git/GitHub", "Bash Scripting", "Linux", "Postman"],
+  },
+  {
+    category: "Security",
+    icon: Shield,
+    items: ["Penetration Testing", "TryHackMe", "Hack The Box", "Security Best Practices"],
   },
 ];
 
@@ -52,7 +62,7 @@ const Skills = () => (
       </motion.h2>
     </div>
 
-    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {skills.map(({ category, icon: Icon, items }, idx) => (
         <motion.div
           key={category}
