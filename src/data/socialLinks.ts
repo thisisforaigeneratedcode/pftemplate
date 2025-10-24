@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, LucideIcon } from "lucide-react";
+import { Github, Linkedin, MessageCircle, LucideIcon } from "lucide-react";
 
 interface SocialLink {
   platform: string;
@@ -18,9 +18,9 @@ const socialLinks: SocialLink[] = [
     Icon: Linkedin,
   },
   {
-    platform: "Email",
-    url: "mailto:njugunabriian@gmail.com",
-    Icon: Mail,
+    platform: "WhatsApp",
+    url: "https://wa.me/254114399034?text=Hi%20Brian%2C%20I'd%20like%20to%20discuss%20a%20project%20with%20you.",
+    Icon: MessageCircle,
   },
 ];
 
