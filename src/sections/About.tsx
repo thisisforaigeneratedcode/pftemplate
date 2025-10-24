@@ -53,7 +53,13 @@ const commands = [
 ];
 
 // Typing effect
-const TypingCommand = ({ command, onComplete, paused }) => {
+interface TypingCommandProps {
+  command: string;
+  onComplete: () => void;
+  paused: boolean;
+}
+
+const TypingCommand: React.FC<TypingCommandProps> = ({ command, onComplete, paused }) => {
   const [typed, setTyped] = useState("");
   const idx = useRef(0);
   const cursorVisible = useRef(true);

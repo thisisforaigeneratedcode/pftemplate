@@ -1,6 +1,10 @@
 import React from "react";
 
-const NavLinks = ({ onClick }) => (
+interface NavLinksProps {
+  onClick?: () => void;
+}
+
+const NavLinks = ({ onClick }: NavLinksProps = {}) => (
   <>
     {["about", "projects", "contact"].map((id) => (
       <a

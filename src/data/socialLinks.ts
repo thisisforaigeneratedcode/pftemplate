@@ -1,6 +1,12 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, LucideIcon } from "lucide-react";
 
-const socialLinks = [
+interface SocialLink {
+  platform: string;
+  url: string;
+  Icon: LucideIcon;
+}
+
+const socialLinks: SocialLink[] = [
   {
     platform: "GitHub",
     url: "https://github.com/guy-with-a-cool-terminal",

@@ -1,4 +1,10 @@
-const projects = [
+interface Project {
+  name: string;
+  desc: string;
+  link: string;
+}
+
+const projects: Project[] = [
   {
     name: "SecureVault",
     desc: "A password manager with GitHub secret scanning and encryption.",

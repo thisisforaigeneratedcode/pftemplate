@@ -1,12 +1,18 @@
 import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
+interface FormState {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(null);
+  const [form, setForm] = useState<FormState>({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<string | null>(null);
 
   const handleSubmit = useCallback(
-    (e) => {
+    (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setStatus("Sending...");
       setTimeout(() => {
@@ -15,7 +21,7 @@ const Contact = () => {
         setTimeout(() => setStatus(null), 5000);
       }, 1000);
     },
-    [setStatus, setForm]
+    []
   );
 
   return (
