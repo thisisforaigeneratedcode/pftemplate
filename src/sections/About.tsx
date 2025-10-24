@@ -2,27 +2,27 @@ import { motion } from "framer-motion";
 import { Code2, Shield, Wrench, Target } from "lucide-react";
 
 const aboutData = {
-  intro: "I'm Brian Njuguna — a software engineering student with hands-on experience in backend and frontend development, focused on cybersecurity and developer productivity. Currently completing my diploma in Software Engineering and enrolled in the ALX Backend program.",
+  intro: "Fullstack developer specializing in backend systems and API development. I've built production applications serving real users including payment integrations, parental control platforms, and voting systems. Self-taught security skills through hands-on training on platforms like TryHackMe and Hack The Box.",
   philosophy: [
-    "Security isn't a feature. It's the foundation.",
-    "Automation reduces human error and scales productivity.",
-    "Open source isn't a trend — it's how we build better tools together."
+    "Production quality matters — build for real users, not just demos.",
+    "Security is learned by doing — practical skills over theory.",
+    "Clean APIs and optimized queries make or break scalability."
   ],
   mission: [
-    "Build productivity and security-focused tools for developers.",
-    "Contribute to open-source projects that empower communities.",
-    "Lead teams and deliver scalable, efficient applications."
+    "Build fullstack applications that solve real business problems.",
+    "Deliver secure, scalable backend systems and REST APIs.",
+    "Continuously learn through hands-on projects and client work."
   ],
   services: [
-    { icon: Shield, label: "Security-focused development" },
-    { icon: Target, label: "Automation & productivity tools" },
-    { icon: Shield, label: "Full-stack web applications" },
-    { icon: Wrench, label: "CLI tools & scripting" }
+    { icon: Shield, label: "Backend systems & REST APIs" },
+    { icon: Target, label: "Payment gateway integrations" },
+    { icon: Shield, label: "Fullstack web applications" },
+    { icon: Wrench, label: "DevOps & CI/CD pipelines" }
   ],
   skills: [
-    "Python", "JavaScript", "Java", "React", "Node.js", 
-    "Express.js", "Tailwind CSS", "REST APIs", "Docker",
-    "Git", "Linux", "Cybersecurity Tools"
+    "Django", "Django REST", "Python", "Node.js", "Express.js",
+    "React", "TypeScript", "PostgreSQL", "Docker", "Kubernetes",
+    "Redis", "Celery", "AWS", "Git", "Linux"
   ]
 };
 

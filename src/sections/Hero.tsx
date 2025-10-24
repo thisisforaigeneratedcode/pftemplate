@@ -41,10 +41,9 @@ const Hero = () => (
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
     >
-      Software engineer passionate about{" "}
-      <span className="text-primary font-semibold">backend development</span>,{" "}
-      <span className="text-primary font-semibold">cybersecurity</span>, and building secure,
-      scalable systems.
+      Fullstack developer specializing in{" "}
+      <span className="text-primary font-semibold">backend systems</span> and{" "}
+      <span className="text-primary font-semibold">API development</span>. Building production applications that serve real users.
     </motion.p>
 
     <motion.div
@@ -77,9 +76,8 @@ const Hero = () => (
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.6 }}
     >
-      Currently diving deep into the{" "}
-      <span className="text-foreground font-medium">ALX backend program</span> while enhancing my
-      skills in cybersecurity and open-source contributions.
+      Currently enrolled in the{" "}
+      <span className="text-foreground font-medium">ALX Backend Software Engineering Program</span>, building fullstack applications with payment integrations, parental control platforms, and enterprise solutions.
     </motion.p>
 
     {/* Decorative elements */}

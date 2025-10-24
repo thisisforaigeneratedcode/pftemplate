@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Sparkles, BookOpen, Rocket } from "lucide-react";
 
 const nowData = {
-  currentWork: "Running cnbcode.com - building productivity and security-focused tools",
-  learning: "ALX Backend Program & advanced cybersecurity practices",
-  building: "Git automation, password manager, site-blocking extension & security tools"
+  currentWork: "Building production apps at CNB Code - payment systems, parental controls & enterprise solutions",
+  learning: "ALX Backend Program - Advanced API design, database optimization & cloud infrastructure",
+  building: "Aegis DNS platform, M-Pesa payment wrapper & fullstack client applications"
 };
 
 const Now = () => {

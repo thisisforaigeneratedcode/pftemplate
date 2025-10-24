@@ -13,34 +13,40 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "SecureVault",
-    desc: "A password manager with GitHub secret scanning and encryption.",
-    link: "https://secure-vault-bintech.vercel.app/",
+    name: "Aegis",
+    desc: "DNS management platform for parental controls with real-time analytics and threat blocking.",
+    link: "https://github.com/guy-with-a-cool-terminal",
     image: "/src/assets/securevault-project.jpg",
     caseStudy: {
-      problem: "Users struggle with managing multiple passwords securely, often reusing weak passwords or storing them insecurely.",
-      solution: "Built a password manager that securely stores and autofills credentials with GitHub secret scanning integration to prevent accidental exposure.",
-      impact: "Enhanced security and user experience by eliminating password reuse and providing secure, encrypted storage.",
-      tech: ["React", "Encryption", "GitHub API", "Vercel"]
+      problem: "Parents need technical knowledge to protect children online using DNS filtering, creating barriers to digital safety.",
+      solution: "Built a web-based platform that simplifies NextDNS management with automated threat blocking, real-time analytics, device management, and customizable filtering rules for non-technical users.",
+      impact: "Production application with active users enabling parents to protect their children online without technical expertise. Features real-time monitoring and automated content blocking.",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Django", "Django REST Framework", "PostgreSQL", "Supabase", "Redis", "Celery"]
     }
   },
   {
-    name: "GitItDone",
-    desc: "A Git-Workflow automation CLI Tool that speeds up your git workflow.",
-    link: "https://github.com/guy-with-a-cool-terminal/GitItDoneAutomationTool",
+    name: "M-Pesa Payment Wrapper",
+    desc: "Developer-friendly API wrapper for Kenya's Daraja payment system.",
+    link: "https://github.com/guy-with-a-cool-terminal",
     image: "/src/assets/gititdone-project.jpg",
     caseStudy: {
-      problem: "Repetitive Git commands waste developer time and increase the risk of human error in version control.",
-      solution: "Created a CLI automation system to streamline version control processes with smart workflows and error prevention.",
-      impact: "Saved development teams significant time and reduced version control errors through automated best practices.",
-      tech: ["Node.js", "CLI", "Git", "Automation"]
+      problem: "Integrating M-Pesa payments requires complex Daraja API knowledge, slowing down payment implementation for developers.",
+      solution: "Created a streamlined API wrapper that simplifies M-Pesa integration through intuitive endpoints, automated registration, and reduced coding complexity.",
+      impact: "Enables faster payment implementation for developers building Kenyan applications, reducing integration time from days to hours.",
+      tech: ["Python", "Django", "REST APIs", "M-Pesa Daraja API", "Payment Processing"]
     }
   },
   {
-    name: "Portfolio Site",
-    desc: "Personal portfolio site, showcasing my skills and work.",
-    link: "https://github.com/guy-with-a-cool-terminal/MyPortfolioWebsite",
+    name: "School Voting System",
+    desc: "Comprehensive voting platform serving 500+ students with real-time results.",
+    link: "https://github.com/guy-with-a-cool-terminal",
     image: "/src/assets/portfolio-project.jpg",
+    caseStudy: {
+      problem: "Manual voting processes are slow, error-prone, and lack transparency for student elections.",
+      solution: "Led a team of 10 developers to build a secure voting platform with authentication, real-time vote counting, administrative dashboard, and election management.",
+      impact: "Successfully deployed for live school elections serving 500+ students with zero downtime. Delivered transparent, efficient elections with instant results.",
+      tech: ["React", "Node.js", "PostgreSQL", "Authentication", "Real-time Processing"]
+    }
   },
 ];
 
