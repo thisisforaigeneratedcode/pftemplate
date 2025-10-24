@@ -1,14 +1,148 @@
 @import "tailwindcss";
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color System - Teal/Cyan Developer Theme */
+    --background: 215 40% 8%;           /* #071422 - Deep navy base */
+    --foreground: 180 100% 95%;         /* Light cyan-white text */
+    
+    --card: 215 35% 11%;                /* #0F172A - Slightly lighter cards */
+    --card-foreground: 180 100% 95%;
+    
+    --popover: 215 35% 11%;
+    --popover-foreground: 180 100% 95%;
+    
+    --primary: 174 72% 56%;             /* #2DD4BF - Vibrant teal */
+    --primary-foreground: 215 40% 8%;
+    
+    --secondary: 215 25% 17%;           /* #1E293B - Subtle backgrounds */
+    --secondary-foreground: 180 100% 95%;
+    
+    --muted: 215 25% 17%;
+    --muted-foreground: 180 10% 60%;    /* Muted gray-cyan */
+    
+    --accent: 174 72% 56%;              /* Teal accent */
+    --accent-foreground: 215 40% 8%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 174 40% 30%;              /* Teal borders */
+    --input: 174 40% 25%;
+    --ring: 174 72% 56%;
+    
+    --sidebar-background: 215 35% 11%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 174 72% 56%;
+    --sidebar-primary-foreground: 215 40% 8%;
+    --sidebar-accent: 215 25% 17%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 174 40% 30%;
+    --sidebar-ring: 174 72% 56%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradient Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 56% / 0.2), hsl(174 72% 56% / 0.05));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 40% 8%), hsl(215 35% 11%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(174 72% 56% / 0.15), transparent 70%);
+    --gradient-card: linear-gradient(135deg, hsl(215 35% 11%), hsl(215 30% 14%));
+    
+    /* Shadow Tokens */
+    --shadow-sm: 0 1px 2px 0 hsl(174 72% 56% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(174 72% 56% / 0.1), 0 2px 4px -1px hsl(174 72% 56% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(174 72% 56% / 0.15), 0 4px 6px -2px hsl(174 72% 56% / 0.05);
+    --shadow-glow: 0 0 30px hsl(174 72% 56% / 0.3), 0 0 60px hsl(174 72% 56% / 0.1);
+    
+    /* Terminal Theme */
+    --terminal-bg: 215 45% 6%;
+    --terminal-header: 215 50% 4%;
+    --terminal-text: 142 70% 60%;
+    --terminal-prompt: 174 72% 56%;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    margin: 0;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  /* Focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background rounded;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Glow effects */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3),
+                inset 0 0 20px hsl(var(--primary) / 0.05);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(174 72% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-glow);
+  }
 }

@@ -81,10 +81,10 @@ const TypingCommand = ({ command, onComplete, paused }) => {
   }, [command, onComplete, paused]);
 
   return (
-    <p className="text-green-300 font-mono text-sm sm:text-base">
-      <span className="text-teal-400">brian@bastion:~$</span> {typed}
-      <span className="inline-block ml-1">
-        {cursorVisible.current ? "|" : "\u00A0"}
+    <p className="text-green-400 font-mono text-sm sm:text-base">
+      <span className="text-primary font-semibold">brian@bastion:~$</span> {typed}
+      <span className="inline-block ml-1 text-primary animate-pulse">
+        {cursorVisible.current ? "▋" : "\u00A0"}
       </span>
     </p>
   );
@@ -110,24 +110,35 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-[#0f172a] text-white min-h-screen py-20 px-6 font-mono"
+      className="bg-background text-foreground min-h-screen py-20 px-6 font-mono"
     >
+      <div className="text-center mb-12">
+        <motion.span
+          className="inline-block px-4 py-1.5 rounded-full text-sm font-mono bg-primary/10 text-primary border border-primary/30 mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          &lt;about /&gt;
+        </motion.span>
+      </div>
+
       <div
         ref={containerRef}
-        className="max-w-4xl mx-auto bg-[#0c1a2c] rounded-md overflow-hidden shadow-lg border border-teal-600"
+        className="max-w-4xl mx-auto glass rounded-xl overflow-hidden shadow-lg border border-border glow-border"
       >
         {/* Terminal header */}
-        <div className="flex space-x-2 items-center bg-[#071526] py-2 px-3">
-          <span className="w-3 h-3 bg-red-500 rounded-full"></span>
-          <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
-          <span className="w-3 h-3 bg-green-500 rounded-full"></span>
-          <span className="ml-2 text-gray-400 text-sm">brian@bastion:~</span>
+        <div className="flex space-x-2 items-center bg-gradient-to-r from-card to-card/80 py-3 px-4 border-b border-border">
+          <span className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors cursor-pointer"></span>
+          <span className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors cursor-pointer"></span>
+          <span className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></span>
+          <span className="ml-3 text-muted-foreground text-sm font-medium">brian@bastion:~</span>
         </div>
 
         {/* Terminal body */}
-        <div className="p-6 space-y-4">
-          <h2 className="text-teal-400 text-2xl sm:text-3xl font-bold">
-            🖥️ Terminal — Accessing Brian Njuguna
+        <div className="p-6 sm:p-8 space-y-4 bg-gradient-to-br from-card via-card to-card/80">
+          <h2 className="text-primary text-2xl sm:text-3xl font-bold flex items-center gap-2">
+            <span>🖥️</span> Terminal — Accessing Brian Njuguna
           </h2>
 
           {commands.slice(0, current + 1).map((line, i) => (
@@ -145,29 +156,32 @@ const About = () => {
                 />
               ) : (
                 <>
-                  <p className="text-green-300 font-mono text-sm sm:text-base">
-                    <span className="text-teal-400">brian@bastion:~$</span>{" "}
+                  <p className="text-green-400 font-mono text-sm sm:text-base">
+                    <span className="text-primary font-semibold">brian@bastion:~$</span>{" "}
                     {line.cmdText}
                   </p>
                   <motion.div
-                    className="text-gray-300 font-mono mt-2 pl-4 whitespace-pre-line"
+                    className="text-foreground/90 font-mono mt-2 pl-4 whitespace-pre-line"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
                   >
                     {Array.isArray(line.output) ? (
-                      <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-1 pl-2 text-teal-300 text-sm">
+                      <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-2 pl-2 text-sm">
                         {line.output.map((o, idx) => (
-                          <li
+                          <motion.li
                             key={idx}
-                            className="bg-[#11243a] px-3 py-1 rounded-md"
+                            className="bg-primary/5 border border-primary/20 px-3 py-2 rounded-lg text-foreground hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 cursor-default"
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.05 }}
                           >
                             {o}
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     ) : (
-                      <p>{line.output}</p>
+                      <p className="text-muted-foreground leading-relaxed">{line.output}</p>
                     )}
                   </motion.div>
                 </>
@@ -176,11 +190,11 @@ const About = () => {
           ))}
 
           {/* Progress & Controls */}
-          <div className="flex justify-between items-center pt-4">
+          <div className="flex flex-wrap gap-3 justify-between items-center pt-6 border-t border-border/50">
             {current < commands.length && (
               <button
                 onClick={next}
-                className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full font-mono text-sm transition"
+                className="group px-6 py-2.5 rounded-full font-mono text-sm transition-all duration-300 bg-primary text-primary-foreground hover:scale-105 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 Run Next Command →
               </button>
@@ -188,31 +202,46 @@ const About = () => {
             {current < commands.length && (
               <button
                 onClick={skipAll}
-                className="text-xs text-gray-400 hover:text-teal-300 transition ml-4"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors ml-4 underline-offset-4 hover:underline"
               >
                 Skip All
               </button>
             )}
-            <p className="text-xs text-gray-500 ml-auto">
-              {current + 1}/{commands.length} commands run
-            </p>
+            <div className="flex items-center gap-2 ml-auto">
+              <div className="flex gap-1">
+                {commands.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                      i <= current ? "bg-primary scale-110" : "bg-border"
+                    }`}
+                  />
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground font-mono">
+                {current + 1}/{commands.length}
+              </p>
+            </div>
           </div>
 
           {/* Final CTA */}
           {current === commands.length && (
             <motion.div
-              className="text-center pt-8"
+              className="text-center pt-8 border-t border-border/50 mt-6"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
               <a
                 href="https://docs.google.com/document/d/1AzpAenefivF0MeBmlpGmeKgM94KQJhirmFFajVDQzu8/edit?usp=sharing"
-                className="inline-block bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                className="group inline-block relative px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-primary text-primary-foreground hover:scale-105 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary overflow-hidden"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View My CV 📄
+                <span className="relative z-10 flex items-center gap-2">
+                  View My CV 📄
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
             </motion.div>
           )}

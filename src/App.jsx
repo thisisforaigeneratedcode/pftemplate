@@ -8,7 +8,7 @@ import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 
 const App = () => (
-  <div className="bg-[#071422] text-white min-h-screen flex flex-col">
+  <div className="bg-background text-foreground min-h-screen flex flex-col">
     <Header />
     <SocialSidebar />
     <main id="maincontent" className="flex-grow">

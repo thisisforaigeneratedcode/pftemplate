@@ -10,24 +10,94 @@ const Projects = () => (
     animate={{ opacity: 1 }}
     transition={{ duration: 1, delay: 0.3 }}
   >
-    <h2 className="text-3xl sm:text-4xl font-bold text-teal-400 text-center mb-16">
-      Featured Projects
-    </h2>
-    <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="text-center mb-16">
+      <motion.span
+        className="inline-block px-4 py-1.5 rounded-full text-sm font-mono bg-primary/10 text-primary border border-primary/30 mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        &lt;projects /&gt;
+      </motion.span>
+      <motion.h2
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        Featured Projects
+      </motion.h2>
+      <motion.p
+        className="text-muted-foreground max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Building secure, scalable solutions that make a difference
+      </motion.p>
+    </div>
+
+    <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map(({ name, desc, link }, idx) => (
         <motion.a
           key={name}
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="block bg-[#112240] p-8 rounded-lg shadow-lg border border-teal-700 hover:border-teal-500 transition transform hover:scale-[1.05] focus:outline-none focus:ring-2 focus:ring-teal-400"
+          className="group relative block rounded-xl overflow-hidden card-hover bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 * idx, duration: 0.6 }}
           aria-label={`Project: ${name}`}
         >
-          <h3 className="text-xl sm:text-2xl font-semibold text-teal-400 mb-4">{name}</h3>
-          <p className="text-gray-400">{desc}</p>
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Content */}
+          <div className="relative p-8">
+            <div className="flex items-start justify-between mb-4">
+              <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
+                <svg
+                  className="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
+                </svg>
+              </div>
+              <svg
+                className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </div>
+            
+            <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+              {name}
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">{desc}</p>
+            
+            {/* Bottom accent */}
+            <div className="mt-6 pt-4 border-t border-border/50">
+              <span className="text-sm font-mono text-primary opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                View Project →
+              </span>
+            </div>
+          </div>
         </motion.a>
       ))}
     </div>
