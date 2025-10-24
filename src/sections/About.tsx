@@ -2,27 +2,27 @@ import { motion } from "framer-motion";
 import { Code2, Shield, Wrench, Target } from "lucide-react";
 
 const aboutData = {
-  intro: "I'm Brian Njuguna — a backend engineer, cybersecurity enthusiast, and open source contributor. I build secure, scalable systems that don't just function — they endure.",
+  intro: "I'm Brian Njuguna — a software engineering student with hands-on experience in backend and frontend development, focused on cybersecurity and developer productivity. Currently completing my diploma in Software Engineering and enrolled in the ALX Backend program.",
   philosophy: [
     "Security isn't a feature. It's the foundation.",
-    "Speed matters, but resilience lasts longer.",
-    "Open source isn't a trend — it's a trust contract."
+    "Automation reduces human error and scales productivity.",
+    "Open source isn't a trend — it's how we build better tools together."
   ],
   mission: [
-    "To engineer robust systems.",
-    "To contribute to open-source tools that empower.",
-    "To educate and inspire through community-driven innovation."
+    "Build productivity and security-focused tools for developers.",
+    "Contribute to open-source projects that empower communities.",
+    "Lead teams and deliver scalable, efficient applications."
   ],
   services: [
-    { icon: Shield, label: "Secure API & backend architecture" },
-    { icon: Target, label: "System design & scalability consulting" },
-    { icon: Shield, label: "Security reviews & threat modeling" },
-    { icon: Wrench, label: "CLI tools & dev automation workflows" }
+    { icon: Shield, label: "Security-focused development" },
+    { icon: Target, label: "Automation & productivity tools" },
+    { icon: Shield, label: "Full-stack web applications" },
+    { icon: Wrench, label: "CLI tools & scripting" }
   ],
   skills: [
-    "Node.js", "Python", "Shell Scripting", "Express",
-    "PostgreSQL", "MongoDB", "Linux", "Git & GitHub",
-    "Cybersecurity Practices"
+    "Python", "JavaScript", "Java", "React", "Node.js", 
+    "Express.js", "Tailwind CSS", "REST APIs", "Docker",
+    "Git", "Linux", "Cybersecurity Tools"
   ]
 };
 

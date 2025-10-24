@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Sparkles, BookOpen, Rocket } from "lucide-react";
 
 const nowData = {
-  currentWork: "Building scalable backend solutions at cnbcode.com",
-  learning: "Advanced Kubernetes orchestration & distributed systems",
-  building: "Open-source CLI tools for developer productivity"
+  currentWork: "Running cnbcode.com - building productivity and security-focused tools",
+  learning: "ALX Backend Program & advanced cybersecurity practices",
+  building: "Git automation, password manager, site-blocking extension & security tools"
 };
 
 const Now = () => {
@@ -76,15 +76,28 @@ const Now = () => {
           </motion.div>
         </div>
 
-        <motion.p
-          className="text-center text-muted-foreground text-sm mt-8"
+        <motion.div
+          className="text-center mt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Last updated: October 2025
-        </motion.p>
+          <p className="text-muted-foreground text-sm mb-2">
+            Last updated: October 2025
+          </p>
+          <a
+            href="https://cnbcode.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors duration-300 text-sm font-medium group"
+          >
+            Visit CNB Code
+            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

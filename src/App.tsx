@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import SocialSidebar from "./components/SocialSidebar";
+import EasterEgg from "./components/EasterEgg";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
@@ -13,6 +14,7 @@ const App = () => (
   <div className="bg-background text-foreground min-h-screen flex flex-col">
     <Header />
     <SocialSidebar />
+    <EasterEgg />
     <main id="maincontent" className="flex-grow">
       <Hero />
       <Projects />
