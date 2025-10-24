@@ -11,7 +11,7 @@ const Hero = () => (
   >
     {/* Background glow effect */}
     <div className="absolute inset-0 -z-10">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-glow opacity-40 blur-3xl animate-float" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gradient-glow opacity-20 blur-3xl" />
     </div>
 
     <motion.div
@@ -55,10 +55,9 @@ const Hero = () => (
     >
       <a
         href="#projects"
-        className="group relative inline-flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-lg bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary overflow-hidden"
+        className="inline-flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-lg bg-primary text-primary-foreground shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary"
       >
-        <span className="relative z-10">Explore My Projects</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        Explore My Projects
       </a>
       
       <a

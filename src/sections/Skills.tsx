@@ -1,0 +1,84 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, Database, Shield, Server } from "lucide-react";
+
+const skills = [
+  {
+    category: "Backend",
+    icon: Server,
+    items: ["Python", "Node.js", "REST APIs", "PostgreSQL"],
+  },
+  {
+    category: "Security",
+    icon: Shield,
+    items: ["Encryption", "Penetration Testing", "Secure Coding", "Threat Analysis"],
+  },
+  {
+    category: "Development",
+    icon: Code2,
+    items: ["Git", "Docker", "CI/CD", "Linux"],
+  },
+  {
+    category: "Database",
+    icon: Database,
+    items: ["SQL", "Database Design", "Optimization", "Data Modeling"],
+  },
+];
+
+const Skills = () => (
+  <motion.section
+    id="skills"
+    className="py-20 px-6 max-w-7xl mx-auto"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.8 }}
+  >
+    <div className="text-center mb-16">
+      <motion.span
+        className="inline-block px-4 py-1.5 rounded-full text-sm font-mono bg-primary/10 text-primary border border-primary/20 mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        &lt;skills /&gt;
+      </motion.span>
+      <motion.h2
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        Technical Expertise
+      </motion.h2>
+    </div>
+
+    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {skills.map(({ category, icon: Icon, items }, idx) => (
+        <motion.div
+          key={category}
+          className="p-6 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors duration-300"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 * idx, duration: 0.5 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-primary/10">
+              <Icon className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">{category}</h3>
+          </div>
+          <ul className="space-y-2">
+            {items.map((item) => (
+              <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-primary/50" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      ))}
+    </div>
+  </motion.section>
+);
+
+export default Skills;

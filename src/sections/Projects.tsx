@@ -37,42 +37,37 @@ const Projects = () => (
       </motion.p>
     </div>
 
-    <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map(({ name, desc, link }, idx) => (
+    <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map(({ name, desc, link, image }, idx) => (
         <motion.a
           key={name}
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative block rounded-xl overflow-hidden card-hover bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+          className="group relative block rounded-xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 * idx, duration: 0.6 }}
+          transition={{ delay: 0.1 * idx, duration: 0.5 }}
           aria-label={`Project: ${name}`}
         >
-          {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Image */}
+          <div className="relative h-48 overflow-hidden bg-muted">
+            <img 
+              src={image} 
+              alt={`${name} preview`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
+          </div>
           
           {/* Content */}
-          <div className="relative p-8">
-            <div className="flex items-start justify-between mb-4">
-              <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-              </div>
+          <div className="p-6">
+            <div className="flex items-start justify-between mb-3">
+              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                {name}
+              </h3>
               <svg
-                className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -86,16 +81,13 @@ const Projects = () => (
               </svg>
             </div>
             
-            <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-              {name}
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">{desc}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">{desc}</p>
             
-            {/* Bottom accent */}
-            <div className="mt-6 pt-4 border-t border-border/50">
-              <span className="text-sm font-mono text-primary opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                View Project →
-              </span>
+            {/* Tech badge */}
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-xs font-mono text-primary">View Project</span>
+              </div>
             </div>
           </div>
         </motion.a>
